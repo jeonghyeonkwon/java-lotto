@@ -5,6 +5,7 @@ import lotto.dto.LottosDto;
 import lotto.dto.PrizeMoneyDto;
 import lotto.dto.ResultDto;
 import lotto.entity.*;
+import lotto.entity.machine.LottoMachine;
 import lotto.view.InputView;
 import lotto.view.ResultView;
 

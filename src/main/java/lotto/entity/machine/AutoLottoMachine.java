@@ -1,5 +1,7 @@
-package lotto.entity;
+package lotto.entity.machine;
 
+
+import lotto.entity.Lotto;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,5 +1,7 @@
-package lotto.entity;
+package lotto.entity.machine;
 
+import lotto.entity.Lotto;
+import lotto.entity.machine.LottoMachine;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

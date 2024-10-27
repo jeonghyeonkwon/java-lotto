@@ -1,4 +1,7 @@
-package lotto.entity;
+package lotto.entity.machine;
+
+import lotto.entity.Lotto;
+import lotto.entity.LottoMoney;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +15,8 @@ public class LottoMachine {
 
     public static List<Lotto> createLotto(int inputMoney, int manualCount, List<String[]> manualTexts) {
         List<Lotto> result = new ArrayList<>();
-        List<Lotto> manualLottos = ManualLottoMachine.createLotto(inputMoney, manualCount, manualTexts);
+        ManualLottoCount.validate(inputMoney, manualCount, manualTexts);
+        List<Lotto> manualLottos = ManualLottoMachine.createLotto(manualTexts);
         result.addAll(manualLottos);
         List<Lotto> autoLottos = AutoLottoMachine.createLotto(getAutoCount(inputMoney, manualCount));
         result.addAll(autoLottos);

@@ -1,6 +1,8 @@
-package lotto.entity;
+package lotto.entity.machine;
 
 import lotto.LottoMethod;
+import lotto.entity.Lotto;
+import lotto.entity.machine.ManualLottoMachine;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -20,7 +22,7 @@ public class ManualLottoMachineTest {
         texts.add(new String[]{"1", "2", "3", "4", "5", "7"});
         texts.add(new String[]{"1", "2", "3", "4", "5", "8"});
 
-        List<Lotto> newLottos = ManualLottoMachine.createLotto(3000, 3, texts);
+        List<Lotto> newLottos = ManualLottoMachine.createLotto(texts);
 
 
         List<Lotto> lottos = Arrays.asList(
@@ -40,7 +42,7 @@ public class ManualLottoMachineTest {
         List<String[]> texts = new ArrayList<>();
         texts.add(new String[]{"1", "2", "3", "4", "5", "6", "7"});
 
-        assertThatThrownBy(() -> ManualLottoMachine.createLotto(1000, 1, texts));
+        assertThatThrownBy(() -> ManualLottoMachine.createLotto(texts));
 
     }
 
@@ -50,7 +52,7 @@ public class ManualLottoMachineTest {
         texts.add(new String[]{"1", "2", "3", "4", "5", "6", "7"});
         texts.add(new String[]{"1", "2", "3", "4", "5", "6", "7"});
         texts.add(new String[]{"1", "2", "3", "4", "5", "6", "7"});
-        assertThatThrownBy(() -> ManualLottoMachine.createLotto(2000, 3, texts)).isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> ManualLottoMachine.createLotto(texts)).isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
@@ -59,6 +61,6 @@ public class ManualLottoMachineTest {
         texts.add(new String[]{"1", "2", "3", "4", "5", "6", "7"});
         texts.add(new String[]{"1", "2", "3", "4", "5", "6", "7"});
 
-        assertThatThrownBy(() -> ManualLottoMachine.createLotto(5000, 3, texts)).isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> ManualLottoMachine.createLotto(texts)).isInstanceOf(IllegalArgumentException.class);
     }
 }
